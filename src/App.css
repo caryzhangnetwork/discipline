@@ -1,6 +1,10 @@
 .menu {
-  display: absolute;
+  display: flex;
+  position: absolute;
   bottom: 0;
-  height: 100px;
-  border-bottom: 1px solid #808080;
+  left: 0;
+  height: 300px;
+  width: 100%;
+  border-top: 1px solid #808080;
+  background: red;
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import CircleButton from './ClickButton/ClickButton';
+import TabButton from './TabButton/TabButton';
 import './App.css';
 
 const App = () => {
@@ -8,6 +9,12 @@ const App = () => {
   };
   const handleSleepClick = () => {
     console.log("this is sleep")
+  };
+  const handleDataClick = () => {
+    console.log("this is data")
+  };
+  const handleMenuClick = () => {
+    console.log("this is menu")
   };
 
   return (
@@ -21,7 +28,8 @@ const App = () => {
         <CircleButton name="Sleep" onClick={handleSleepClick}/>
       </div>
       <div className="menu">
-        <div></div>
+        <TabButton name='Data' onClick={handleDataClick} />
+        <TabButton name='Menu' onClick={handleMenuClick} />
       </div>
     </div>
   );
