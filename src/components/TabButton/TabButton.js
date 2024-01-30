@@ -7,7 +7,7 @@ const CircleButton = ({name, onClick}) => {
       style={{
         flex: 1,
         textAlign: 'center',
-        fontSize: '70px',
+        fontSize: '30px',
       }}
       onClick={onClick}
     >
