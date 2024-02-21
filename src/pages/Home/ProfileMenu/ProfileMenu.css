@@ -1,0 +1,45 @@
+.profileContainer {
+  position: relative;
+  height: 200px;
+  width: 200px;
+}
+
+.clickButton {
+  position: absolute;
+  border-radius: 50%;
+  border: none;
+  margin: 1rem;;
+  cursor: pointer;
+  font-size: 3rem;
+  text-align: center;
+  color: #333;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+.profileButton {
+  right: 0;
+  width: 5rem;
+  height: 5rem;
+  line-height: 5rem;
+}
+.firstMenuOption {
+  left: 20px;
+  top: 5px;
+  width: 3rem;
+  height: 3rem;
+  line-height: 3rem;
+}
+.secondMenuOption {
+  left: 30px;
+  top: 75px;
+  width: 3rem;
+  height: 3rem;
+  line-height: 3rem;
+}
+.thirdMenuOption {
+  left: 100px;
+  top: 100px;
+  width: 3rem;
+  height: 3rem;
+  line-height: 3rem;
+}

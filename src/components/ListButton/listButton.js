@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import './clickButton.css';
+import './listButton.css';
 
-const ClickButton = ({name, onClick}) => {
+const ListButton = ({name, onClick}) => {
   const [isPress, setIsPress] = useState(false);
 
   const handleMouseDown = () => {
@@ -12,7 +12,7 @@ const ClickButton = ({name, onClick}) => {
   return (
     <div>
       <div
-        className='clickButton'
+        className='listView'
         style={{
         }}
         onMouseDown={handleMouseDown}
@@ -23,4 +23,4 @@ const ClickButton = ({name, onClick}) => {
   );
 };
 
-export default ClickButton;
+export default ListButton;

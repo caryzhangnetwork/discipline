@@ -8,3 +8,23 @@
   border-top: 1px solid #808080;
   background: red;
 }
+.header {
+  position: relative;
+  height: 5rem;
+}
+.profileContainer {
+  position: absolute;
+  right: 0;
+}
+
+.optionsList {
+  /* display: flex; */
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  bottom: 42px;
+  right: 0;
+  height: 21rem;
+  width: 7rem;
+  overflow: scroll;
+}

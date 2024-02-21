@@ -1,15 +1,17 @@
 import React from 'react';
-import CircleButton from '../../components/ClickButton/ClickButton';
-import TabButton from '../../components/TabButton/TabButton';
-import getTime from '../../apis/timeApis'
+import LongPressButton from '../../components/LongPressButton/longPressButton';
+import ProfileMenu from './ProfileMenu/ProfileMenu';
+import ListButton from '../../components/ListButton/listButton';
+import TabButton from '../../components/TabButton/tabButton';
+import postTimeSlot from '../../apis/timeApis'
 import './Home.css';
 
 const Home = () => {
   const handleDinerClick = () => {
-    getTime();
+    postTimeSlot(2);
   };
   const handleSleepClick = () => {
-    console.log("this is sleep")
+    postTimeSlot(1);
   };
   const handleDataClick = () => {
     console.log("this is data")
@@ -20,17 +22,27 @@ const Home = () => {
 
   return (
     <div>
+      <div className="header">
+        <div class="profileContainer">
+          <ProfileMenu/>
+        </div>
+      </div>
       <div style={{
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
       }}>
-        <CircleButton name="Diner" onClick={handleDinerClick}/>
-        <CircleButton name="Sleep" onClick={handleSleepClick}/>
+        <LongPressButton name="餐" onClick={handleDinerClick}/>
+        <LongPressButton name="睡" onClick={handleSleepClick}/>
       </div>
       <div className="menu">
         <TabButton name='Data' onClick={handleDataClick} />
         <TabButton name='Menu' onClick={handleMenuClick} />
+      </div>
+      <div className="optionsList">
+        <ListButton/>
+        <ListButton/>
+        <ListButton/>
       </div>
     </div>
   );
