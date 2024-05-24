@@ -3,7 +3,6 @@ import Home from './pages/Home/Home';
 import Login from './pages/Login/Login';
 import { Route, Routes, useNavigate } from 'react-router-dom';
 
-
 const App = () => {
   const navigate = useNavigate();
 

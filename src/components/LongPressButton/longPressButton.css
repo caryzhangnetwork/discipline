@@ -10,8 +10,10 @@
   font-size: 3rem;
   text-align: center;
   color: #333;
+  background-color: white;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  user-select: none;
 }
 
 .circleContainer {
@@ -19,20 +21,22 @@
   top: 2rem;
   height: 15rem;
   width: 15rem;
+  user-select: none;
 }
 
 .circle {
   fill: none;
-  stroke: #575eda6c;
+  stroke: rgba(33, 35, 184, 0.424);
   stroke-width: 6;
-  stroke-dasharray: 314;
+  stroke-dasharray: 314, 314;
   stroke-dashoffset:314;
-  animation: circle 1.3s infinite;
-  opacity: 0.6;
+  animation: circle 1.3s 1.2;
+  opacity: 0;
 }
 
 @keyframes circle {
   100%{
-      stroke-dashoffset:0;
+      stroke-dashoffset: 0;
+      opacity: 0.6;
   }
 }

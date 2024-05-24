@@ -9,7 +9,7 @@ const login = async (userInfo) => {
   res = await axios.post('/api/userLogin', data)
   if (res.data.status === 1) {
     if (res.data.user_id) {
-      localStorage.setItem('user', JSON.stringify(res.data.user_id));
+      localStorage.setItem('user', JSON.stringify(res.data));
       loginSuccess = true;
     }
   }
@@ -18,9 +18,10 @@ const login = async (userInfo) => {
 
 export const getTotalScore = async () => {
   let totalScore = 0;
-  const user = localStorage.getItem('user'),
-  data = {
-    userId: user
+  const user = JSON.parse(localStorage.getItem('user'));
+  console.log("getTotalScore ", user)
+  const data = {
+    userId: user.user_id
   },
   res = await axios.post('/api/getTotalScore', data)
   console.log("getTotalScore " ,res)

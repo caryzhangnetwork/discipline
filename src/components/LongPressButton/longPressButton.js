@@ -6,24 +6,30 @@ const LongPressButton = ({name, onClick}) => {
   const [isLoading, setIsLoading] = useState(false);
   const timeoutRef = useRef(null);
 
-  const handleMouseDown = () => {
+  const handleMouseDown = (e) => {
+    e.stopPropagation();
+    e.preventDefault();
     setIsPress(true);
     setIsLoading(true);
     timeoutRef.current = setTimeout(() => {
-      onClick();
-    }, 1100);
+      onClick(e);
+      setIsPress(false);
+      setIsLoading(false);
+    }, 900);
   };
 
-  const handleMouseUp = () => {
+  const handleMouseUp = (e) => {
     setIsPress(false);
     setIsLoading(false);
     clearTimeout(timeoutRef.current);
   };
 
   useEffect(() => {
-    window.addEventListener('touchend', handleMouseUp);
+    window.addEventListener('mouseup', handleMouseUp);
+    // window.addEventListener('touchend', handleMouseUp);
     return () => {
-      window.removeEventListener('touchend', handleMouseUp);
+      window.removeEventListener('mouseup', handleMouseUp);
+      // window.removeEventListener('touchend', handleMouseUp);
     };
   }, []);
 
@@ -35,18 +41,31 @@ const LongPressButton = ({name, onClick}) => {
         
       }}
     >
+      {/* for phone press */}
       <div
         className='circleButton'
         style={{
-          transform: isPress ? 'scale(0.95)' : 'scale(1)',
+          transform: isPress ? 'scale(0.9)' : 'scale(1)',
         }}
         onTouchStart={handleMouseDown}
       >
         {name}
       </div>
-      { isLoading && (
+
+      {/* for pc click */}
+      {/* <button
+        className='circleButton'
+        style={{
+          transform: isPress ? 'scale(0.9)' : 'scale(1)',
+        }}
+        onMouseDown={handleMouseDown}
+      >
+        {name}
+      </button> */}
+      
+      {  isLoading && (
         <svg  className="circleContainer">
-          <circle  className="circle" cx="95" cy="98" r="93" fill="none" stroke="#7C83FD"></circle>
+          <circle  className="circle" cx="95" cy="95" r="93" fill="none" stroke="#7C83FD"></circle>
         </svg>
       )}
     </div>

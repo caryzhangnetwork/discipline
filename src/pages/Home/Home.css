@@ -1,5 +1,6 @@
 .menu {
-  display: flex;
+  display: none;
+  /* display: flex; */
   position: absolute;
   bottom: 0;
   left: 0;
@@ -11,6 +12,10 @@
 .header {
   position: relative;
   height: 5rem;
+}
+.nameTitle {
+  font-size: 1rem;
+  text-align: center;
 }
 .profileContainer {
   position: absolute;

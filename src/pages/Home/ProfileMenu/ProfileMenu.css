@@ -10,11 +10,13 @@
   border: none;
   margin: 1rem;;
   cursor: pointer;
-  font-size: 3rem;
+  font-size: 1.2rem;
   text-align: center;
   color: #333;
+  background-color: white;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  user-select: none;
 }
 .profileButton {
   right: 0;
@@ -30,6 +32,7 @@
   line-height: 3rem;
 }
 .secondMenuOption {
+  display: none;
   left: 30px;
   top: 75px;
   width: 3rem;
