@@ -23,9 +23,9 @@
 }
 
 .optionsList {
-  /* display: flex; */
-  display: none;
-  flex-direction: column;
+  display: flex;
+  /* display: none; */
+  flex-direction: column-reverse;
   position: absolute;
   bottom: 42px;
   right: 0;

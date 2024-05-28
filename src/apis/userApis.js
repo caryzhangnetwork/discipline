@@ -19,7 +19,6 @@ const login = async (userInfo) => {
 export const getTotalScore = async () => {
   let totalScore = 0;
   const user = JSON.parse(localStorage.getItem('user'));
-  console.log("getTotalScore ", user)
   const data = {
     userId: user.user_id
   },

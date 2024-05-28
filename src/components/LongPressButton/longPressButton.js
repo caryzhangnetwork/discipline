@@ -25,11 +25,11 @@ const LongPressButton = ({name, onClick}) => {
   };
 
   useEffect(() => {
-    window.addEventListener('mouseup', handleMouseUp);
-    // window.addEventListener('touchend', handleMouseUp);
+    // window.addEventListener('mouseup', handleMouseUp);
+    window.addEventListener('touchend', handleMouseUp);
     return () => {
-      window.removeEventListener('mouseup', handleMouseUp);
-      // window.removeEventListener('touchend', handleMouseUp);
+      // window.removeEventListener('mouseup', handleMouseUp);
+      window.removeEventListener('touchend', handleMouseUp);
     };
   }, []);
 
@@ -42,7 +42,7 @@ const LongPressButton = ({name, onClick}) => {
       }}
     >
       {/* for phone press */}
-      <div
+      {/* <div
         className='circleButton'
         style={{
           transform: isPress ? 'scale(0.9)' : 'scale(1)',
@@ -50,10 +50,10 @@ const LongPressButton = ({name, onClick}) => {
         onTouchStart={handleMouseDown}
       >
         {name}
-      </div>
+      </div> */}
 
       {/* for pc click */}
-      {/* <button
+      <button
         className='circleButton'
         style={{
           transform: isPress ? 'scale(0.9)' : 'scale(1)',
@@ -61,7 +61,7 @@ const LongPressButton = ({name, onClick}) => {
         onMouseDown={handleMouseDown}
       >
         {name}
-      </button> */}
+      </button>
       
       {  isLoading && (
         <svg  className="circleContainer">

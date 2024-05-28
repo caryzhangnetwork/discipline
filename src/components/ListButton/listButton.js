@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import './listButton.css';
 
-const ListButton = ({name, onClick}) => {
+const ListButton = ({name, data, onClick}) => {
   const [isPress, setIsPress] = useState(false);
 
-  const handleMouseDown = () => {
+  const handleMouseDown = (e) => {
     setIsPress(true);
-
+    onClick(e, data)
   };
 
   return (
