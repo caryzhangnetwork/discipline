@@ -17,7 +17,30 @@
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
   user-select: none;
+  animation: shake 0.5s ease-out;
 }
+
+@keyframes shake {
+  0% {
+    transform: translateY(0);
+  }
+  20% {
+    transform: translateY(-15px);
+  }
+  40% {
+    transform: translateY(10px);
+  }
+  60% {
+    transform: translateY(-10px);
+  }
+  80% {
+    transform: translateY(5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
 .profileButton {
   right: 0;
   width: 5rem;
@@ -32,7 +55,7 @@
   line-height: 3rem;
 }
 .secondMenuOption {
-  display: none;
+  /* display: none; */
   left: 30px;
   top: 75px;
   width: 3rem;

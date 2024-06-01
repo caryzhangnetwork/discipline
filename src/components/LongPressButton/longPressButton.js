@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { BrowserView, MobileView } from 'react-device-detect';
 import './longPressButton.css';
 
 const LongPressButton = ({name, onClick}) => {
@@ -42,26 +43,30 @@ const LongPressButton = ({name, onClick}) => {
       }}
     >
       {/* for phone press */}
-      {/* <div
-        className='circleButton'
-        style={{
-          transform: isPress ? 'scale(0.9)' : 'scale(1)',
-        }}
-        onTouchStart={handleMouseDown}
-      >
-        {name}
-      </div> */}
+      <MobileView>
+        <div
+          className='circleButton'
+          style={{
+            transform: isPress ? 'scale(0.9)' : 'scale(1)',
+          }}
+          onTouchStart={handleMouseDown}
+        >
+          {name}
+        </div>
+      </MobileView>
 
       {/* for pc click */}
-      <button
-        className='circleButton'
-        style={{
-          transform: isPress ? 'scale(0.9)' : 'scale(1)',
-        }}
-        onMouseDown={handleMouseDown}
-      >
-        {name}
-      </button>
+      <BrowserView>
+        <button
+          className='circleButton'
+          style={{
+            transform: isPress ? 'scale(0.9)' : 'scale(1)',
+          }}
+          onMouseDown={handleMouseDown}
+        >
+          {name}
+        </button>
+      </BrowserView>
       
       {  isLoading && (
         <svg  className="circleContainer">

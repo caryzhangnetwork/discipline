@@ -1,4 +1,5 @@
-const textShowing = (event, text) => {
+//show text animation
+export const textShowing = (event, text) => {
   var a_idx = 0;
       var a = new Array(text);
 
@@ -11,11 +12,11 @@ const textShowing = (event, text) => {
 
       var f = 50, // 字体大小
         // for PC
-        x =  event.clientX / 2, // 横坐标
-        y = event.clientY - f, // 纵坐标
+        //x =  event.clientX / 2, // 横坐标
+        //y = event.clientY - f, // 纵坐标
           // for mobile
-        //   x = event.touches[0].clientX / 2,
-        //   y = event.touches[0].clientY - f,
+          x = event.touches[0].clientX / 2,
+          y = event.touches[0].clientY - f,
           c = randomColor(), // 随机颜色
           a = 1, // 透明度
           s = 5; // 放大缩小

@@ -1,19 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import LongPressButton from '../../components/LongPressButton/longPressButton';
 import ProfileMenu from './ProfileMenu/ProfileMenu';
 import ListButton from '../../components/ListButton/listButton';
 import TabButton from '../../components/TabButton/tabButton';
 import { usePostTimeSlot, usePostDuraction } from '../../apis/timeApis'
 import { useSelector } from 'react-redux';
-import textShowing from '../../utils/animation'
+import { textShowing } from '../../utils/animation'
+import { getTotalScore } from '../../apis/userApis'
 import './Home.css';
 
 const Home = () => {
   const [showBtnList, setShowBtnList] = useState(false),
   user = JSON.parse(localStorage.getItem('user')),
   postTimeSlot = usePostTimeSlot(),
-  newTotalScore = useSelector((state) => state.user.totalScore),
   postDuraction = usePostDuraction();
+  // useEffect(async () => {
+  //   // call api or anything
+  // });
+
+  let newTotalScore = useSelector((state) => state.user.totalScore);
 
   const handleDinerClick = async (e) => {
     console.log("before click diner")
@@ -68,6 +73,7 @@ const Home = () => {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
+        marginTop: '50px',
       }}>
         <LongPressButton name="餐" onClick={handleDinerClick}/>
         <LongPressButton name="睡" onClick={handleSleepClick}/>
@@ -79,7 +85,7 @@ const Home = () => {
       <div className="optionsList">
         <ListButton name="锻" onClick={openExList}/>
         {showBtnList && (
-          <div>
+          <div className='optionsItems'>
             <ListButton name="锻30" data="30" onClick={handleExClick} />
             <ListButton name="锻60" data="60" onClick={handleExClick} />
           </div>
