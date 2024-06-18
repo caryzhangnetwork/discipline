@@ -16,6 +16,12 @@
 .nameTitle {
   font-size: 1rem;
   text-align: center;
+  background: #f9b2b2a1;
+  padding: 13px;
+  text-transform: capitalize;
+  font-weight: bold;
+  color: #373535b5;
+  font-family: Gill sans-serif;
 }
 .profileContainer {
   position: absolute;
@@ -32,6 +38,13 @@
   height: 21rem;
   width: 7rem;
   overflow: scroll;
+  z-index: 999;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.optionsList:focus {
+  outline: none;
 }
 
 .optionsItems {
@@ -48,16 +61,4 @@
     transform: translateY(0); /* 最终位置为完全显示 */
     opacity: 1;
   }
-}
-
-.ball {
-  position: absolute;
-  background-color: #333;
-  border-radius: 50%;
-  z-index: 999;
-  transition: all 0.5s ease-in-out;
-}
-.ball-animation {
-  transform: translate(-50%, -50%);
-  opacity: 0;
 }

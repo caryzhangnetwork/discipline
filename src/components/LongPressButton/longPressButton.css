@@ -1,7 +1,7 @@
 .circleButton {
-  width: 12rem;
-  height: 12rem;
-  line-height: 12rem;
+  width: 10rem;
+  height: 10rem;
+  line-height: 10rem;
   border-radius: 50%;
   border: none;
   margin: auto;
@@ -19,8 +19,8 @@
 .circleContainer {
   position: absolute;
   top: 2rem;
-  height: 15rem;
-  width: 15rem;
+  height: 12rem;
+  width: 12rem;
   user-select: none;
 }
 
@@ -31,7 +31,7 @@
   stroke-dasharray: 314, 314;
   stroke-dashoffset:314;
   animation: circle 1.3s 1.2;
-  opacity: 0;
+  opacity: 1;
 }
 
 @keyframes circle {

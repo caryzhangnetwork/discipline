@@ -68,9 +68,9 @@ const LongPressButton = ({name, onClick}) => {
         </button>
       </BrowserView>
       
-      {  isLoading && (
+      { isLoading &&  (
         <svg  className="circleContainer">
-          <circle  className="circle" cx="95" cy="95" r="93" fill="none" stroke="#7C83FD"></circle>
+          <circle  className="circle" cx="80" cy="80" r="75" fill="none" stroke="#7C83FD"></circle>
         </svg>
       )}
     </div>

@@ -18,6 +18,12 @@
   transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
   user-select: none;
   animation: shake 0.5s ease-out;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.clickButton:focus {
+  outline: none;
 }
 
 @keyframes shake {
@@ -53,6 +59,7 @@
   width: 3rem;
   height: 3rem;
   line-height: 3rem;
+  z-index: 999;
 }
 .secondMenuOption {
   /* display: none; */
@@ -61,6 +68,7 @@
   width: 3rem;
   height: 3rem;
   line-height: 3rem;
+  z-index: 999;
 }
 .thirdMenuOption {
   left: 100px;
@@ -68,4 +76,5 @@
   width: 3rem;
   height: 3rem;
   line-height: 3rem;
+  z-index: 999;
 }

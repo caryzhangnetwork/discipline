@@ -7,6 +7,8 @@ import { usePostTimeSlot, usePostDuraction } from '../../apis/timeApis'
 import { useSelector } from 'react-redux';
 import { textShowing } from '../../utils/animation'
 import { getTotalScore } from '../../apis/userApis'
+import { updateTotalScore } from '../../redux/userSlice';
+import { useDispatch } from 'react-redux';
 import './Home.css';
 
 const Home = () => {
@@ -14,16 +16,19 @@ const Home = () => {
   user = JSON.parse(localStorage.getItem('user')),
   postTimeSlot = usePostTimeSlot(),
   postDuraction = usePostDuraction();
-  // useEffect(async () => {
-  //   // call api or anything
-  // });
+  const dispatch = useDispatch();
+  useEffect(() => {
+    const fetchTotalScore = async () => {
+      newTotalScore = await getTotalScore();
+      dispatch(updateTotalScore(newTotalScore))
+    };
+    fetchTotalScore(); // 调用fetchTotalScore函数
+  });
 
   let newTotalScore = useSelector((state) => state.user.totalScore);
 
   const handleDinerClick = async (e) => {
-    console.log("before click diner")
     let score = await postTimeSlot(2);
-    console.log("click ", score)
     score = JSON.stringify(score);
     if (score > 0) {
       score = '+ ' + score;
@@ -31,9 +36,7 @@ const Home = () => {
     textShowing(e, score);
   };
   const handleSleepClick = async (e) => {
-    console.log("before click sleep")
     let score = await postTimeSlot(1); 
-    console.log("click ", score)
     score = JSON.stringify(score);
     if (score > 0) {
       score = '+ ' + score;
@@ -41,15 +44,12 @@ const Home = () => {
     textShowing(e, score);
   };
   const handleDataClick = () => {
-    console.log("this is data")
   };
   const handleMenuClick = () => {
-    console.log("this is menu")
   };
 
   const handleExClick = async (e, duration) => {
     let score = await postDuraction(3, duration); 
-    console.log("click ", score)
     score = JSON.stringify(score);
     if (score > 0) {
       score = '+ ' + score;

@@ -1,3 +1,5 @@
+import {isBrowser} from 'react-device-detect';
+
 //show text animation
 export const textShowing = (event, text) => {
   var a_idx = 0;
@@ -11,12 +13,8 @@ export const textShowing = (event, text) => {
       heart.style.cssText = "position: fixed;left:-100%;"; //给p元素设置样式
 
       var f = 50, // 字体大小
-        // for PC
-        //x =  event.clientX / 2, // 横坐标
-        //y = event.clientY - f, // 纵坐标
-          // for mobile
-          x = event.touches[0].clientX / 2,
-          y = event.touches[0].clientY - f,
+        x = isBrowser ? event.clientX / 2 : event.touches[0].clientX / 2, // 横坐标
+        y = isBrowser ? event.clientY - f : event.touches[0].clientY - f, // 纵坐标
           c = randomColor(), // 随机颜色
           a = 1, // 透明度
           s = 5; // 放大缩小
